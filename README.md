@@ -9,11 +9,10 @@ This application lets the user make their own dictionary by adding words and def
 Setup
 Clone this repository
 Open a simple HTTP server in the top level of the cloned directory
-Run the Sinatra server
 Then open your web browser of choice to localhost:4567
 
 To open in Heroku
-
+https://quiet-wave-5570.herokuapp.com/
 
 Copyright (c) 2015 Janice V. Dunn
 
