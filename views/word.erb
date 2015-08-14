@@ -2,7 +2,7 @@
 
 <ul>
   <% @word.meanings().each() do |meaning| %>
-    <li><a href="/definition/<%= meaning.id() %>"><%= meaning.explanation() %></a></li>
+    <li><%= meaning.explanation() %></li>
   <% end %>
 </ul>
 

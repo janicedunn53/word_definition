@@ -21,7 +21,7 @@ post('/words') do
   name = params.fetch('name')
   Word.new(name).save()
   @words = Word.all()
-  erb(:success_word)
+  erb(:success)
 end
 
 get('/definitions/:id') do
@@ -34,7 +34,7 @@ get('/words/:id') do
   erb(:word)
 end
 
-get('words/:id/definitions/new') do
+get('/words/:id/definitions/new') do
   @word = Word.find(params.fetch('id').to_i())
   erb(:word_definitions_form)
 end
@@ -45,5 +45,5 @@ post('/definitions') do
   @definition.save()
   @word = Word.find(params.fetch('word_id').to_i())
   @word.add_definition(@definition)
-  erb(:success_definition)
+  erb(:success)
 end
