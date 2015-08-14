@@ -37,3 +37,11 @@ describe('path to all words', {:type => :feature}) do
     expect(page).to have_content("Words")
   end
 end
+
+describe('path to the definitions of a word', {:type => :feature}) do
+  it('sends user to list of meanings') do
+    visit('/words')
+    click_link("simple")
+    expect(page).to have_content("Here are all the meanings of this word:")
+  end
+end
