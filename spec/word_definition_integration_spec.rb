@@ -45,3 +45,11 @@ describe('path to the definitions of a word', {:type => :feature}) do
     expect(page).to have_content("Here are all the meanings of this word:")
   end
 end
+
+describe('path to word definitions form', {:type => :feature}) do
+  it('processes user entry and adds new definition') do
+    visit('/words/1')
+    click_link("Add a new definition")
+    expect(page).to have_content("Add a definition to")
+  end
+end
