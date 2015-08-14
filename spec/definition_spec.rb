@@ -35,4 +35,22 @@ describe('Definition') do
     end
   end
 
+  describe('.#id') do
+    it("returns the id of the definition") do
+      test_definition = Definition.new("easy to understand")
+      test_definition.save()
+      expect(test_definition.id()).to(eq(1))
+    end
+  end
+
+  describe('.find') do
+    it("returns a definition by its id number") do
+      test_definition = Definition.new("easy to understand")
+      test_definition.save()
+      test_definition2 = Definition.new("not elaborate")
+      test_definition2.save()
+      expect(Definition.find(test_definition.id())).to(eq(test_definition))
+    end
+  end
+
 end
