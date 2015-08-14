@@ -14,6 +14,13 @@ describe(Word) do
     end
   end
 
+  describe('#id') do
+    it("returns the id of the word") do
+      test_word = Word.new("simple")
+      expect(test_word.id()).to(eq(1))
+    end
+  end
+
   describe('#meanings') do
     it("initially returns an empty array of meanings for the word") do
       test_word = Word.new("simple")
@@ -40,6 +47,16 @@ describe(Word) do
       Word.new("simple").save()
       Word.clear()
       expect(Word.all()).to(eq([]))
+    end
+  end
+
+  describe('.find') do
+    it("returns a word by its id number") do
+      test_word = Word.new("simple")
+      test_word.save()
+      test_word2 = Word.new("complex")
+      test_word2.save()
+      expect(Word.find(test_word.id())).to(eq(test_word))
     end
   end
 
