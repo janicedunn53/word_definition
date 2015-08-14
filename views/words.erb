@@ -1,6 +1,11 @@
 <h1>Words</h1>
+
+<h3>Click on a word to see its meanings:</h3>
+
 <ul>
   <% @words.each() do |word| %>
     <li><a href="/words/<%= word.id() %>"><%= word.name() %></a></li>
   <% end %>
 </ul>
+
+<a href="/">Return to Main Page</a>

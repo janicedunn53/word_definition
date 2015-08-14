@@ -49,7 +49,23 @@ end
 describe('path to word definitions form', {:type => :feature}) do
   it('processes user entry and adds new definition') do
     visit('/words/1')
-    click_link("Add a new definition")
+    click_link("Add a New Definition")
     expect(page).to have_content("Add a definition to")
+  end
+end
+
+describe('path to success page', {:type => :feature}) do
+  it('sends user to success page for adding definition to word') do
+    visit('/words/1/definitions/new')
+    click_button("Add Definition")
+    expect(page).to have_content("Success!")
+  end
+end
+
+describe('path to index', {:type => :feature}) do
+  it('returns user to the main page') do
+    visit('/words/1')
+    click_link("Return to Main Page")
+    expect(page).to have_content("Make Your Own Dictionary")
   end
 end
