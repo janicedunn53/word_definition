@@ -42,7 +42,7 @@ end
 post('/definitions') do
   explanation = params.fetch('explanation')
   @definition = Definition.new(explanation)
-  @definition.save()
+  # @definition.save()
   @word = Word.find(params.fetch('word_id').to_i())
   @word.add_definition(@definition)
   erb(:success)
